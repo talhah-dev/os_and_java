@@ -483,3 +483,77 @@ if (names.contains("Talha")) {
 
 names.clear();
 
+// linklist
+
+import java.util.LinkedList;
+
+public class Main {
+    public static void main(String[] args) {
+
+        LinkedList<String> names = new LinkedList<>();
+
+        names.add("Talha");
+        names.add("Ali");
+        names.add("Sara");
+
+        names.addFirst("Start");
+        names.addLast("End");
+
+            System.out.println(names);
+    }
+}
+
+// methods exist
+addFirst()
+addLast()
+getFirst()
+getLast()
+removeFirst()
+removeLast()
+
+// hashmap
+import java.util.HashMap;
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+
+        HashMap<String, String> user = new HashMap<>();
+
+        user.put("name", "Talha");
+        user.put("email", "talha@gmail.com");
+        user.put("city", "Karachi");
+        user.put("city", "Lahore"); // update
+
+        // Convert keys to a list so we can use index-based loop
+        ArrayList<String> keys = new ArrayList<>(user.keySet());
+
+        // Classic loop: i = 0; i < length; i++
+        for (int i = 0; i < keys.size(); i++) {
+            String key = keys.get(i);          // key at index i
+            String value = user.get(key);      // get value using the key
+            System.out.println(key + " = " + value);
+        }
+    }
+}
+
+// -----second loop
+
+import java.util.HashMap;
+
+public class Main {
+    public static void main(String[] args) {
+
+        HashMap<String, String> user = new HashMap<>();
+
+        user.put("name", "Talha");
+        user.put("email", "talha@gmail.com");
+        user.put("city", "Karachi");
+
+        user.put("city", "Lahore"); // update
+
+        for (String key : user.keySet()) {
+            System.out.println(key + " = " + user.get(key));
+        }
+    }
+}
