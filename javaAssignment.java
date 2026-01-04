@@ -221,3 +221,225 @@ public class Main {
 
   }
 }
+
+
+==============================================================================
+
+public class Main {
+
+  static class Node {
+    int data;
+    Node next;
+
+    Node(int data) {
+      this.data = data;
+      this.next = null;
+    }
+  }
+
+  public static void main(String[] args) {
+
+    Node first = new Node(10);
+    Node second = new Node(20);
+    Node third = new Node(30);
+
+    first.next = second;
+    second.next = third;
+
+    Node head = first;
+
+    Node temp = head;
+
+    while (temp != null) {
+      System.out.print(temp.data + " -> ");
+      temp = temp.next;
+    }
+    System.out.println("null");
+  }
+}
+
+===========================================================================
+
+public class Main {
+
+  static class Node{
+    int data;
+    Node next;
+
+    Node(int data){
+      this.data = data;
+      this.next = null;
+    }
+  }
+
+  static Node head = null;
+  public static void addLast(int data){
+
+    Node newNode = new Node(data);
+
+    Node temp = head;
+    while (temp.next != null) {
+      temp = temp.next;
+    }
+
+    temp.next = newNode;
+  }
+
+  public static void addFirst(int data) {
+    Node newNode = new Node(data);
+    newNode.next = head;
+    head = newNode;
+  }
+
+  public static void printList() {
+
+    Node temp = head;
+
+    while (temp != null) {
+      System.out.print(temp.data + " -> ");
+      temp = temp.next;
+    }
+    System.out.println("null");
+  }
+
+  public static void main(String[] args) {
+
+    Node first = new Node(1);
+    Node second = new Node(2);
+    Node third = new Node(3);
+    Node fourth = new Node(4);
+
+    first.next = second;
+    second.next = third;
+    third.next = fourth;
+    head = first;
+    addLast(5);
+    addFirst(8);
+
+
+    printList();
+
+  }
+}
+
+===================================
+
+
+import java.util.*;
+
+public class Main {
+  public static void main(String[] args){
+
+    String s = "Geeks";
+
+    String r = "";
+
+    for(int i=0;i<s.length();  i++){
+     r = s.charAt(i) + r;
+    }
+    System.out.print(r);
+
+
+  }
+}
+
+============================================
+
+import java.util.*;
+
+public class Main {
+  public static void main(String[] args) {
+
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter Something : ");
+    String text = sc.nextLine();
+
+    text = text.toLowerCase();
+    int count = 0;
+
+    String[] vowels = {"a","e","i","u"};
+
+    for(int i=0; i<text.length(); i++){
+       if (text.charAt(i) == 'a' ||  text.charAt(i) == 'e' || text.charAt(i) == 'i' || text.charAt(i) == 'o' || text.charAt(i) == 'u'){
+          count++;
+          System.out.println( count + ") " + text.charAt(i));
+       }
+    }
+
+    System.out.print("Total vowels is : " + count);
+
+  }
+}
+
+
+================================================================
+
+
+import java.util.*;
+
+public class Main {
+  public static void main(String[] args) {
+
+    Scanner sc = new Scanner(System.in);
+
+    int[] arr = {1,2,3,7,3,8,2,452,42,34,24,234,32,534,5,346,5,654,6,546,54,6754,67,567};
+
+    for(int i=0; i<arr.length - 1; i++){
+      for(int j=0; j<arr.length -i -1; j++){
+        if (arr[j] > arr[j+1]) {
+          int temp = arr[j];
+          arr[j] = arr[j+1];
+          arr[j+1] = temp;
+        }
+      }
+    }
+
+    for(int i=0; i<arr.length; i++){
+      System.out.print(arr[i]);
+    }
+
+    int arrLength = arr.length;
+    System.out.println(" ");
+
+    System.out.print( "largest is : " + arr[arrLength-1]);
+    System.out.println(" ");
+    System.out.print( "Second largest is : " + arr[arrLength-2]);
+  }
+}
+
+
+========================================================================
+
+
+import java.util.*;
+
+public class Main {
+  public static void main(String[] args) {
+
+
+    String text = "moom";
+    text = text.toLowerCase();
+
+    int left = 0;
+    int right = text.length()-1;
+
+    boolean Palindrome = true;
+
+    for(int i =0; i<text.length(); i++){
+      if (text.charAt(left) != text.charAt(right)){
+        Palindrome = false;
+      }
+      left++;
+      right--;
+    }
+
+    if (Palindrome == true){
+      System.out.print("Yes");
+    }else{
+      System.out.print("No");
+    }
+
+
+
+  }
+}
