@@ -437,7 +437,7 @@ menu() {
   done
 }
 
-# -------------------- CLI MODE (optional) --------------------
+# -------------------- CLI MODE --------------------
 # Examples:
 # ./health_check.sh --report
 # ./health_check.sh --email
